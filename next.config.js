@@ -5,6 +5,13 @@ const nextConfig = {
     let compilerConfig = {
       styledComponents: true,
     };
+
+    if (process.env.NODE_ENV === 'production') {
+      compilerConfig = {
+        ...compilerConfig,
+        reactRemoveProperties: { properties: ['^data-testid$'] },
+      };
+    }
     return compilerConfig;
   },
 };
