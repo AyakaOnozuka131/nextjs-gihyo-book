@@ -33,12 +33,12 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 // Themeの適用
-addDecorator((story) => {
+addDecorator((story) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     {story()}
-  </ThemeProvider>;
-});
+  </ThemeProvider>
+));
 
 // next/imageの差し替え
 const OriginalNextImage = NextImage.default;
